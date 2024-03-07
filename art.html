@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Susan MacIntosh's Art Store:Home</title>
+</head>
+
+<Body>
+ 
+  <header>
+    <nav>
+    <div class="topnav-centered a">
+    <ul> 
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="events.html">Events</a></li> 
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="shopping cart.html">Shopping Cart</a></li>
+    </ul>
+    </div>
+    </nav>
+    </header>
+
+<main class="container">
+  <h1>Susan MacIntosh's Art Store</h1>
+  <!--This code came from here: https://www.codehim.com/gallery/simple-css-image-gallery-with-thumbnail/-->
+  <!--This code was sourced using help from the StackOverFlow crowd-->
+  <section>
+    <p>Animals</p>
+    <img src="Images\Sheltie Snow Day Art Print (7 x 7).png" class="selected">
+    <div class="thumbnails">
+      <img src="Images\Sheltie Snow Day Art Print (7 x 7).png">
+      <img src="Images/Chickadees Chat ORIGINAL Mini Painting.png">
+    </div>
+  </section>
+  <section>
+    <p>Flowers</p>
+    <img src="Images\Daisy Wildflower Abundance ORIGINAL Painting ( 7x7).png" class="selected">
+    <div class="thumbnails">
+      <img src="Images\Daisy Wildflower Abundance ORIGINAL Painting ( 7x7).png">
+      <img src="Images/Wildflower Meadow Mini ORIGINAL Painting ( 7 x 7) Sunflower Landscape.png">
+      <img src="Images/Wildflower Meadow ORIGINAL Painting Mini Floral Landscap.png">
+    </div>
+  </section>
+  <section>
+    <p>Nature</p>
+    <img src="Images\Wildflower Meadow Mini ORIGINAL Painting ( 7 x 7) Sunflower Landscape.png" class="selected">
+    <div class="thumbnails">
+      <img src="Images\Wildflower Meadow Mini ORIGINAL Painting ( 7 x 7) Sunflower Landscape.png">
+      <img src="Images/Mini ORIGINAL Flower Abstract Meadow.png">
+      <img src="Images/Modern ORIGINAL Pink Roses Painting (8 x 10).png">
+      <img src="Images/Modern ORIGINAL Rose Painting (7 x 7).png">
+  </div>
+  </section>
+    <p>Horizons</p>
+    <img src="Images\download.png" class="selected">
+    <div class="thumbnails">
+      <img src="Images\download.png">
+      <img src="Images/Three Sisters Mountains.png">
+      <img src="Images/Prairie Road ORIGINAL Painting, Pink Sky Art (8 x 10).png">
+      <img src="Images/Three Sisters Mountains.png">
+  </div>
+  </secton>
+  <section>
+    <p>Northern Lights</p>
+    <img src="Images\Northern Lights ORIGINAL Acrylic Painting Night Sky Art (5x7) Aurora Borealis.png" class="selected">
+    <div class="thumbnails">
+      <img src="Images\Northern Lights ORIGINAL Acrylic Painting Night Sky Art (5x7) Aurora Borealis.png">
+      <img src="Images/Northern Lights ORIGINAL Small Painting (7 x 7) Aurora Borealis.png">
+      <img src="Images/Northern Lights ORIGINAL Painting (7 x7) , Aurora Borealis.png">
+      <img src="Images/Northern Lights ORIGINAL Acrylic Painting Night Sky Art (5x7) Aurora Borealis.png">
+  </div> 
+  </section>
+
+  <p>All art is avaiable for purchase at Susan's Etsy store: <a href="https://www.etsy.com/shop/ladywithabrush">Lady With A Brush</a></p> 
+
+  <!--https://stackoverflow.com/questions/40717478/scroll-button-jquery-for-scroll-up-and-scroll-down-->
+  <!--This is for button scroll from botton to the top of page-->
+  <button id="scrollToTopBtn" title="Go to top">Top</button>
+  <script>
+$(document).ready(function(){
+  // Show or hide the button depending on scroll position
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('#scrollToTopBtn').fadeIn();
+    } else {
+      $('#scrollToTopBtn').fadeOut();
+    }
+  });
+  
+  // Smooth scroll to top when button is clicked
+  $('#scrollToTopBtn').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
+});
+
+  </script>
+
+</main>
+
+<hr>
+<footer> 
+  <p>Susan MacIntosh's Art Store</p> 
+  <p>Author: James Macintosh</p>
+  <p>Last modified: 2023-12-31</p>
+</footer>
+
+<script src="Script.js"></script>
+
+</body> 
+</html> 
+

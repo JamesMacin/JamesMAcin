@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Susan MacIntosh's Art Store: Home</title>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="topnav-centered a">
+            <ul> 
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="art.html">Art</a></li>
+                <li><a href="events.html">Events</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shopping cart.html">Shopping Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<h1>Contact Susan MacIntosh</h1>
+
+<main>
+
+    <section id="email-us">
+
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div id="map">
+            <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159977.9317626435!2d-114.07188943339052!3d51.04473303424735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb88b652b9f!2sCalgary%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sus!4v1645465440011!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="quick"></iframe>
+        </div>
+
+    </section>
+</main>
+
+<script src="script.js"></script>
+
+<!--https://stackoverflow.com/questions/6780890/jquery-function-inside-document-ready-function-->
+<!---This JQuery is for form verifiaction-->
+<script>
+$(document).ready(function(){
+    $('#contactForm').submit(function(event) {
+        var isValid = true;
+        $('input[type="text"], input[type="email"], textarea').each(function() {
+            if ($(this).val() === '') {
+                isValid = false;
+                $(this).addClass('error');
+            }
+        });
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+});
+</script>
+
+<footer> 
+    <p> Susan MacIntosh's Art Store</p> 
+    <p>Author: James Macintosh</p>
+    <p>Last modified: 2023-12-31</p>
+</footer>
+
+</body>
+</html>
+

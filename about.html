@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Susan MacIntosh's Art Store:Home</title>
+    <style>
+        body {
+            text-align: center; /* Center all content horizontally */
+        }
+
+        img {
+            display: block; /* Make the image a block element */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        #advice-container {
+            text-align: center; /* Center the random advice text horizontally */
+            font-family: 'Times New Roman', Times, serif; /* Set font family */
+            color: rgb(158, 118, 68); /* Set text color */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="topnav-centered a">
+                <ul> 
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="art.html">Art</a></li>
+                    <li><a href="events.html">Events</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="shopping cart.html">Shopping Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main> 
+        <h1>Susan MacIntosh's Art Store</h1>
+        <p>
+            Susan is an artsy person with a Bachelor's Degree in Fine Arts from the University of Waterloo. She lives in Calgary, Alberta, where she works as a full time artist. She is inspired by the natural beauty of Alberta, including mountains, horizons, and wildflowers. A life-long artisit, she has been represented by a couple of galleries (paintings), designed greeting cards, made leather dog collars, and fashioned jewelry. After 40 years of artistic wandering, Susan has decided that she is in fact a painter.
+        </p>
+     
+        <img src="Images\Mom Face.jpg">   
+
+        <h2>Random Advice</h2>
+        <div id="advice-container"></div>
+    </main>
+
+    <footer> 
+        <p>Susan MacIntosh's Art Store</p> 
+        <p>Author: James Macintosh</p>
+        <p>Last modified: 2023-12-31</p>
+    </footer>
+
+    <!--https://dev.to/mcbarna/create-a-simple-random-quote-generator-using-jquery-and-advice-slip-api-1n5j-->
+    <script>
+        function fetchRandomAdvice() {
+            const url = 'https://api.adviceslip.com/advice?' + new Date().getTime(); // Append timestamp to URL
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const advice = data.slip.advice;
+                    const adviceContainer = document.getElementById('advice-container');
+                    adviceContainer.textContent = advice;
+                })
+                .catch(error => {
+                    console.error('Error fetching random advice:', error);
+                    const adviceContainer = document.getElementById('advice-container');
+                    adviceContainer.textContent = 'Failed to fetch random advice. Please try again later.';
+                });
+        }
+
+        // Function to fetch random advice initially and then every 10 seconds
+        function startFetchingRandomAdvice() {
+            fetchRandomAdvice();
+            setInterval(fetchRandomAdvice, 10000); // Fetch new advice every 10 seconds
+        }
+
+        // Start fetching random advice when the page loads
+        window.onload = startFetchingRandomAdvice;
+    </script>
+</body> 
+</html>
